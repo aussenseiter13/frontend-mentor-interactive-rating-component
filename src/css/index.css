@@ -3,5 +3,171 @@
 @import url("./base/typography.css");
 
 body {
+    --system-base: calc((1rem / 2) * 1.06);
     background: var(--very-dark-blue);
+    min-height: 100vh;
+    width: 100vw;
 }
+
+body main {
+    min-height: inherit;
+    min-width: inherit;
+    padding: 0 calc(var(--system-base) * 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body main section {
+    min-height: 21rem;
+    max-width: 25rem;
+    padding: calc(var(--system-base) * 3);
+    color: var(--light-grey);
+    background: var(--dark-blue);
+    background-image: linear-gradient(
+        to top,
+        #171e28,
+        #19202a,
+        #1a212b,
+        #1c232d,
+        #1e252f
+    );
+    border-radius: 16px;
+}
+
+/* Voting Element | START */
+body main section .voting-element {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--system-base) * 4);
+}
+
+body main section .voting-element .voting-element-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+body main section .voting-element .voting-element-header h4 {
+    color: var(--white);
+}
+
+body main section .voting-element .voting-element-header p {
+    color: var(--light-grey);
+    line-height: 1.6rem;
+}
+
+body main section .voting-element .voting-element-header svg {
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--dark-blue-2);
+}
+
+body main section .voting-element .voting-element-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+body main section .voting-element .voting-element-form-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body main section .voting-element .voting-element-form-items div label {
+    background: var(--dark-blue-2);
+    line-height: 0.8;
+    padding: 8px 16px;
+    padding-top: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body main section .voting-element .voting-element-form-items div label:hover {
+    background: var(--orange);
+    color: var(--white);
+    transition: background ease-in-out 200ms;
+}
+
+.selected {
+    background: var(--light-grey) !important;
+    color: var(--white) !important;
+}
+
+body main section .voting-element .voting-element-form-submit {
+    display: flex;
+    width: 100%;
+}
+
+body main section .voting-element .voting-element-form-submit button {
+    width: inherit;
+    color: var(--white);
+    background: var(--orange);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 16px 0px;
+    border-radius: 24px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    transition: background ease-in-out 200ms;
+}
+
+.disabled {
+    background: var(--dark-blue-2) !important;
+    color: var(--dark-grey) !important;
+    cursor: not-allowed !important;
+}
+
+.disabled:hover {
+    background: var(--dark-blue-2) !important;
+    color: var(--dark-grey) !important;
+    cursor: not-allowed !important;
+}
+
+body main section .voting-element .voting-element-form-submit button:hover {
+    background: var(--white);
+    color: var(--orange);
+}
+
+/* Voting Element | END */
+
+/* Voting Message | START */
+body main section .voting-message {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+body main section .voting-message .voting-message-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+body main section .voting-message .voting-message-header p {
+    background: var(--dark-blue);
+    padding: 8px 16px;
+    border-radius: 16px;
+    color: var(--orange);
+    box-shadow: var(--very-dark-blue) 3px 2px 8px 2px;
+}
+
+body main section .voting-message .voting-message-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+body main section .voting-message .voting-message-body h3 {
+    color: var(--white);
+}
+body main section .voting-message .voting-message-body p {
+    line-height: 1.6rem;
+}
+/* Voting Message | END */
